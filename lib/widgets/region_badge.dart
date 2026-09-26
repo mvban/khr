@@ -21,12 +21,12 @@ class RegionBadge extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
           color: isUnlocked
-              ? AppTheme.bananaLeafGreen.withOpacity(0.12)
-              : Colors.grey.withOpacity(0.15),
+              ? AppTheme.bananaLeafGreen.withValues(alpha: 0.12)
+              : Colors.grey.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: isUnlocked
-                ? AppTheme.bananaLeafGreen.withOpacity(0.4)
+                ? AppTheme.bananaLeafGreen.withValues(alpha: 0.4)
                 : Colors.grey.shade400,
             width: 1,
           ),

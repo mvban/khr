@@ -138,9 +138,9 @@ class FavouritesScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: AppTheme.bananaLeafGreen.withOpacity(0.12),
+        color: AppTheme.bananaLeafGreen.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppTheme.bananaLeafGreen.withOpacity(0.3)),
+        border: Border.all(color: AppTheme.bananaLeafGreen.withValues(alpha: 0.3)),
       ),
       child: Text(
         label,

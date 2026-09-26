@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.12),
+                color: Colors.white.withValues(alpha: 0.12),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
@@ -81,7 +81,7 @@ class _SplashScreenState extends State<SplashScreen> {
               style: GoogleFonts.outfit(
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.white.withValues(alpha: 0.9),
                 letterSpacing: 1.0,
               ),
             ).animate().fadeIn(delay: 500.ms, duration: 500.ms),

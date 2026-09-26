@@ -21,7 +21,7 @@ class PassportMapWidget extends StatelessWidget {
         border: Border.all(color: AppTheme.borderGrey),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -39,7 +39,7 @@ class PassportMapWidget extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: AppTheme.terracotta.withOpacity(0.12),
+                      color: AppTheme.terracotta.withValues(alpha: 0.12),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(Icons.explore_rounded, color: AppTheme.terracotta, size: 22),
@@ -68,7 +68,7 @@ class PassportMapWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: passport.hasKhaarExplorerBadge
                       ? AppTheme.turmericGold
-                      : AppTheme.bananaLeafGreen.withOpacity(0.15),
+                      : AppTheme.bananaLeafGreen.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -91,7 +91,7 @@ class PassportMapWidget extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 14),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.turmericGold.withOpacity(0.2),
+                color: AppTheme.turmericGold.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: AppTheme.turmericGold),
               ),
@@ -147,7 +147,7 @@ class PassportMapWidget extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: isVisited
-                        ? AppTheme.bananaLeafGreen.withOpacity(0.12)
+                        ? AppTheme.bananaLeafGreen.withValues(alpha: 0.12)
                         : Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(

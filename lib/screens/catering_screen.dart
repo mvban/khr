@@ -80,7 +80,7 @@ class CateringScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: AppTheme.bananaLeafGreen.withOpacity(0.12),
+                    color: AppTheme.bananaLeafGreen.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(color: AppTheme.bananaLeafGreen),
                   ),
@@ -195,7 +195,7 @@ class CateringScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: AppTheme.turmericGold.withOpacity(0.15),
+                color: AppTheme.turmericGold.withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.stars_rounded, color: AppTheme.darkCharcoal),

@@ -4,7 +4,7 @@ class CateringProvider extends ChangeNotifier {
   String _eventType = 'Corporate Dinner';
   int _guestCount = 30;
   DateTime _eventDate = DateTime.now().add(const Duration(days: 14));
-  List<String> _selectedDietaryNeeds = ['GF Options'];
+  final List<String> _selectedDietaryNeeds = ['GF Options'];
   String _specialRequests = '';
   bool _isSubmitted = false;
 

@@ -176,9 +176,9 @@ class DishDetailScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppTheme.bananaLeafGreen.withOpacity(0.08),
+                  color: AppTheme.bananaLeafGreen.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppTheme.bananaLeafGreen.withOpacity(0.3)),
+                  border: Border.all(color: AppTheme.bananaLeafGreen.withValues(alpha: 0.3)),
                 ),
                 child: Row(
                   children: [
