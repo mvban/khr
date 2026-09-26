@@ -12,14 +12,14 @@ class ToastFallbackDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       title: const Row(
         children: [
-          Icon(Icons.restaurant_menu_rounded, color: AppTheme.terracotta, size: 28),
+          Icon(Icons.get_app_rounded, color: AppTheme.terracotta, size: 28),
           SizedBox(width: 10),
           Expanded(
             child: Text(
-              'Reserve via Toast',
+              'Toast App Not Installed',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 19,
               ),
             ),
           ),
@@ -30,8 +30,8 @@ class ToastFallbackDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Toast App is not installed on your device or could not be launched directly.',
-            style: TextStyle(fontSize: 15, height: 1.4),
+            'The Toast app is not installed on your phone. How would you like to proceed?',
+            style: TextStyle(fontSize: 14, height: 1.4, color: AppTheme.darkCharcoal),
           ),
           const SizedBox(height: 16),
           Container(
@@ -43,12 +43,12 @@ class ToastFallbackDialog extends StatelessWidget {
             ),
             child: const Row(
               children: [
-                Icon(Icons.info_outline, color: AppTheme.bananaLeafGreen, size: 20),
+                Icon(Icons.info_outline_rounded, color: AppTheme.bananaLeafGreen, size: 20),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'Choose how you would like to complete your table reservation:',
-                    style: TextStyle(fontSize: 13, color: AppTheme.mutedText),
+                    'Direct ordering & instant reservations work best with the Toast app.',
+                    style: TextStyle(fontSize: 12, color: AppTheme.mutedText),
                   ),
                 ),
               ],
@@ -56,36 +56,43 @@ class ToastFallbackDialog extends StatelessWidget {
           ),
         ],
       ),
-      actionsPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      actionsPadding: const EdgeInsets.all(16),
       actions: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Option 1: Download Toast from Play Store
             ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).pop();
-                ToastReservationService.openInBrowser();
-              },
-              icon: const Icon(Icons.open_in_browser),
-              label: const Text('Open in Browser'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.terracotta,
-                foregroundColor: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
               onPressed: () {
                 Navigator.of(context).pop();
                 ToastReservationService.openPlayStore();
               },
-              icon: const Icon(Icons.android),
-              label: const Text('Install from Google Play'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: AppTheme.bananaLeafGreen,
-                side: const BorderSide(color: AppTheme.bananaLeafGreen, width: 1.5),
+              icon: const Icon(Icons.shop_two_rounded),
+              label: const Text('1) Download Toast from Play Store'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.bananaLeafGreen,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
               ),
             ),
+            const SizedBox(height: 10),
+
+            // Option 2: Open in Browser
+            OutlinedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pop();
+                ToastReservationService.openInBrowser();
+              },
+              icon: const Icon(Icons.open_in_browser_rounded),
+              label: const Text('2) Open in Browser'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: AppTheme.terracotta,
+                side: const BorderSide(color: AppTheme.terracotta, width: 1.5),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+              ),
+            ),
+            const SizedBox(height: 4),
+
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: const Text('Cancel', style: TextStyle(color: AppTheme.mutedText)),

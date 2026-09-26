@@ -7,19 +7,26 @@ class ToastReservationService {
   static Future<void> reserveTable(BuildContext context) async {
     final Uri toastUri = Uri.parse(AppConstants.toastReservationUrl);
 
-    try {
-      final bool launched = await launchUrl(
-        toastUri,
-        mode: LaunchMode.externalApplication,
-      );
+    bool launchedNativeApp = false;
 
-      if (!launched && context.mounted) {
-        _showToastFallbackDialog(context);
-      }
+    try {
+      // Launch strictly in non-browser native app mode
+      launchedNativeApp = await launchUrl(
+        toastUri,
+        mode: LaunchMode.externalNonBrowserApplication,
+      );
     } catch (_) {
-      if (context.mounted) {
-        _showToastFallbackDialog(context);
-      }
+      launchedNativeApp = false;
+    }
+
+    if (launchedNativeApp) {
+      // Toast app was installed and launched directly
+      return;
+    }
+
+    // If Toast app is NOT installed, show fallback popup with 2 options
+    if (context.mounted) {
+      _showToastFallbackDialog(context);
     }
   }
 
@@ -50,6 +57,9 @@ class ToastReservationService {
 
   static Future<void> openInBrowser() async {
     final Uri toastUri = Uri.parse(AppConstants.toastReservationUrl);
-    await launchUrl(toastUri, mode: LaunchMode.externalApplication);
+    await launchUrl(
+      toastUri,
+      mode: LaunchMode.externalApplication,
+    );
   }
 }

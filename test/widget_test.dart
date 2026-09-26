@@ -6,6 +6,6 @@ void main() {
     await tester.pumpWidget(const KhaarApp());
     expect(find.text('KHAAR'), findsOneWidget);
     expect(find.text('SUNNYVALE'), findsOneWidget);
-    await tester.pump(const Duration(milliseconds: 1500));
+    await tester.pump(const Duration(seconds: 13));
   });
 }
